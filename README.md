@@ -90,31 +90,27 @@ Follow these instructions to get a local copy up and running for development and
     ```
 
 3.  **Set up environment variables:**
-    Create a .env file in the project root and fill it with your environment variables.
+   
 
-        ```bash
-
+   ```bash
     DATABASE_URL='postgresql://neondb_owner:npg_lYa9T6zwCZJc@ep-curly-snow-adag0enc-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
     JWT_SECRET="test"
     JWT_EXP=10d
     PORT=5000
-
-    ```
-
+   ```
 
 
-    ```
+
+
 
 4.  ** Set up the database:**
 
-        ```bash
+       ```bash
         npm run migrate:generate
+         npm run migrate:deploy
+       ```
 
-    npm run migrate:deploy
 
-    ```
-
-    ```
 
 5.  **Run the development server:**
     ```bash

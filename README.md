@@ -103,7 +103,7 @@ Follow these instructions to get a local copy up and running for development and
 
 
 
-4.  ** Set up the database:**
+4.  **Set up the database:**
 
        ```bash
         npm run migrate:generate

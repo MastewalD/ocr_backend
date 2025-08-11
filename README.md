@@ -80,7 +80,7 @@ Follow these instructions to get a local copy up and running for development and
 
     ```bash
     git clone https://github.com/MastewalD/ocr_backend.git
-    cd receipt-scanner
+    cd ocr_backend
     ```
 
 2.  **Install dependencies:**
@@ -107,7 +107,7 @@ Follow these instructions to get a local copy up and running for development and
 
         ```bash
         npm run migrate:generate
-    npm run migrate:deploy
+       npm run migrate:deploy
 
     ```
 

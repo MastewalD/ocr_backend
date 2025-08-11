@@ -1,0 +1,38 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id        String    @id @default(uuid()) 
+  email     String    @unique
+  name      String?
+  password  String    @db.VarChar(255) 
+  receipts  Receipt[]
+  createdAt DateTime  @default(now())
+
+  
+}
+
+model Receipt {
+  id             String         @id @default(uuid()) 
+  storeName      String
+  dateOfPurchase DateTime
+  totalAmount    Float
+  category       String
+  items          PurchasedItem[]
+  user           User           @relation(fields: [userId], references: [id])
+  userId         String         
+}
+
+model PurchasedItem {
+  id        String   @id @default(uuid()) 
+  name      String
+  price     Float
+  receipt   Receipt  @relation(fields: [receiptId], references: [id])
+  receiptId String   
+}

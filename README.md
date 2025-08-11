@@ -10,11 +10,12 @@ A GraphQL API server that allows users to upload receipt images, automatically e
 - [Features](#features)
 - [How It Works](#how-it-works)
 - [Tech Stack](#tech-stack)
+
 ---
 
 ## Project Overview
 
-This project delivers a full featured backend API that enables users to register, authenticate, and manage their receipts through a secure GraphQL interface. Users can upload images of receipts, which are processed using Tesseract.js OCR to accurately extract textual data. The system parses key receipt details including store name, purchase date, total amount, and individual purchased items then  categorizes and persists this structured data in a relational database.
+This project delivers a full featured backend API that enables users to register, authenticate, and manage their receipts through a secure GraphQL interface. Users can upload images of receipts, which are processed using Tesseract.js OCR to accurately extract textual data. The system parses key receipt details including store name, purchase date, total amount, and individual purchased items then categorizes and persists this structured data in a relational database.
 
 The API supports efficient, paginated retrieval of all receipts belonging to a user, as well as fetching detailed information for any specific receipt. File uploads are rigorously validated for type and size to ensure robustness. This solution is designed for scalability, ease of integration, and reliable receipt data management.
 
@@ -58,46 +59,68 @@ The API supports efficient, paginated retrieval of all receipts belonging to a u
 - **Prisma ORM** with PostgreSQL or Neon for database
 - **graphql-upload** for handling file uploads
 - **Tesseract.js / Custom OCR Service** for Optical Character Recognition
-- **Bcryptjs**  for hash user password
+- **Bcryptjs** for hash user password
 - **jsonwebtoken** to generate token
 - Custom utilities for file validation, date conversion, and receipt categorization
 
 ---
-##  Getting Started
+
+## Getting Started
 
 Follow these instructions to get a local copy up and running for development and testing purposes.
 
 ### Prerequisites
 
--   [Node.js](https://nodejs.org/) (version 18.x or later recommended)
--   `npm` or your preferred package manager
+- [Node.js](https://nodejs.org/) (version 18.x or later recommended)
+- `npm` or your preferred package manager
 
 ### Installation
 
 1.  **Clone the repository:**
+
     ```bash
     git clone https://github.com/MastewalD/ocr_backend.git
     cd receipt-scanner
     ```
 
 2.  **Install dependencies:**
+
     ```bash
     npm install
     ```
 
-3.  **Run the development server:**
+3.  **Set up environment variables:**
+    Create a .env file in the project root and fill it with your environment variables.
+
+        ```bash
+
+    DATABASE_URL='postgresql://neondb_owner:npg_lYa9T6zwCZJc@ep-curly-snow-adag0enc-pooler.c-2.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require'
+    JWT_SECRET="test"
+    JWT_EXP=10d
+    PORT=5000
+
+    ```
+
+    
+
+4.  ** Set up the database:**
+
+        ```bash
+        npm run migrate:generate
+    npm run migrate:deploy
+
+    ```
+
+  
+
+5.  **Run the development server:**
     ```bash
     npm run dev
     ```
 
-
-
-##  Available Scripts
+## Available Scripts
 
 - `npm run dev`: Starts the development server in watch mode for local development.
 - `npm run start`: Starts the production server (requires a build to be generated first).
 - `npm run migrate:generate`: Generates a new database migration file based on schema changes.
 - `npm run migrate:deploy`: Applies pending migrations to the database.
-
-
-

@@ -63,3 +63,41 @@ The API supports efficient, paginated retrieval of all receipts belonging to a u
 - Custom utilities for file validation, date conversion, and receipt categorization
 
 ---
+##  Getting Started
+
+Follow these instructions to get a local copy up and running for development and testing purposes.
+
+### Prerequisites
+
+-   [Node.js](https://nodejs.org/) (version 18.x or later recommended)
+-   `npm` or your preferred package manager
+
+### Installation
+
+1.  **Clone the repository:**
+    ```bash
+    git clone https://github.com/MastewalD/ocr_backend.git
+    cd receipt-scanner
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    ```
+
+3.  **Run the development server:**
+    ```bash
+    npm run dev
+    ```
+
+
+
+##  Available Scripts
+
+- `npm run dev`: Starts the development server in watch mode for local development.
+- `npm run start`: Starts the production server (requires a build to be generated first).
+- `npm run migrate:generate`: Generates a new database migration file based on schema changes.
+- `npm run migrate:deploy`: Applies pending migrations to the database.
+
+
+

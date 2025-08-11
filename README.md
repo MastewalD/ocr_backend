@@ -73,7 +73,7 @@ Follow these instructions to get a local copy up and running for development and
 
 - [Node.js](https://nodejs.org/) (version 18.x or later recommended)
 - `npm` or your preferred package manager
-
+---
 ### Installation
 
 1.  **Clone the repository:**
@@ -116,7 +116,7 @@ Follow these instructions to get a local copy up and running for development and
     ```bash
     npm run dev
     ```
-
+---
 ## Available Scripts
 
 - `npm run dev`: Starts the development server in watch mode for local development.

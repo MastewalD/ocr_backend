@@ -77,7 +77,7 @@ Follow these instructions to get a local copy up and running for development and
 1.  **Clone the repository:**
     ```bash
     git clone https://github.com/MastewalD/ocr_backend.git
-    cd receipt-scanner
+    cd ocr_backend
     ```
 
 2.  **Install dependencies:**

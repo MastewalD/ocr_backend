@@ -3,7 +3,7 @@ const { Worker } = require('bullmq');
 const IORedis = require('ioredis');
 const { performOCR } = require('../services/ocrService');
 const prisma = require('../prisma/client');
-const { pubsub } = require("../graphql/resolver"); // Ensure this is a singleton PubSub instance
+const { pubsub } = require("../graphql/resolver"); 
 const { categorizeReceipt } = require("../utils/categorize");
 
 const worker = new Worker('ocrQueue', async job => {
